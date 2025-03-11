@@ -3,7 +3,6 @@
 set -euo pipefail
 
 docker run \
---detach \
 --privileged \
 --name docker-daemon \
 --network dind-network \
