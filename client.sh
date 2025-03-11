@@ -10,4 +10,5 @@ docker run \
 -v dind-certs-client:/certs/client:ro \
 -v $(pwd):/root \
 -w /root \
-docker:${DOCKER_VERSION} sh
+-e ASTRONOMER_AUTH_TOKEN=$ASTRONOMER_AUTH_TOKEN \
+docker:${DOCKER_VERSION} /bin/sh
