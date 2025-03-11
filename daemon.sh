@@ -2,9 +2,13 @@
 
 set -euo pipefail
 
-docker run --privileged --name docker-daemon \
---network dind-network --network-alias docker \
+docker run \
+--detach \
+--privileged \
+--name docker-daemon \
+--network dind-network \
+--network-alias docker \
 -e DOCKER_TLS_CERTDIR=/certs \
 -v dind-certs-ca:/certs/ca \
 -v dind-certs-client:/certs/client \
-docker:26.1.4-dind
+docker:${DOCKER_VERSION}-dind
